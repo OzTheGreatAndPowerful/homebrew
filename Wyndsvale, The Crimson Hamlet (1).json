@@ -1,0 +1,404 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "OWWTCH",
+				"abbreviation": "WtCH",
+				"full": "Wyndsvale, The Crimson Hamlet",
+				"version": "1.0.0",
+				"authors": [
+					"Ozzarious"
+				],
+				"color": "ff6600"
+			}
+		]
+	},
+	"monster": [
+		{
+			"name": "Mindstone-Shard Ghoul",
+			"size": [
+				"M"
+			],
+			"type": "monstrosity",
+			"source": "OWWTCH",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"formula": "5d8 + 5",
+				"average": 27
+			},
+			"speed": {
+				"walk": 30,
+				"burrow": 10
+			},
+			"str": 14,
+			"dex": 15,
+			"con": 12,
+			"int": 4,
+			"wis": 6,
+			"cha": 4,
+			"passive": 8,
+			"cr": "2",
+			"shortName": "Ghoul",
+			"senses": [
+				"blindsight 30 ft."
+			],
+			"senseTags": [
+				"B"
+			],
+			"languages": [
+				"Understands all languages it spoke in life but can't speak"
+			],
+			"languageTags": [
+				"CS",
+				"LF"
+			],
+			"skill": {
+				"athletics": "+4",
+				"acrobatics": "+4"
+			},
+			"vulnerable": [
+				"bludgeoning"
+			],
+			"resist": [
+				"necrotic",
+				"psychic"
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"deafened"
+			],
+			"trait": [
+				{
+					"name": "Shard of the Crystal",
+					"entries": [
+						"While under the influence of a mindstone, whenever the ghoul makes an attack roll or a saving throw, they add {@dice 1d4} to the attack roll or save."
+					]
+				},
+				{
+					"name": "Unusual Nature.",
+					"entries": [
+						"This crfeature doesn’t require air, food, drink, or sleep."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack.",
+					"entries": [
+						"The su-monster makes two attacks: one with its bite and one with its claws."
+					]
+				},
+				{
+					"name": "Bite.",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+					]
+				},
+				{
+					"name": "Claw.",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) slashing damage."
+					]
+				},
+				{
+					"name": "Mind Crush {@recharge 5}",
+					"entries": [
+						"The ghoul targets one creature it can sense within 30 feet of it. The target must succeed on a {@dc 10} Wisdom saving throw or take 17 ({@damage 5d6}) psychic damage and be {@condition stunned} until the end of it's next turn."
+					]
+				}
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"stunned"
+			],
+			"fluff": {
+				"images": [
+					{
+						"type": "image",
+						"href": {
+							"type": "external",
+							"url": "https://5e.tools/img/bestiary/MPMM/Star%20Spawn%20Grue.webp"
+						}
+					}
+				]
+			},
+			"tokenHref": {
+				"type": "external",
+				"url": "https://5e.tools/img/bestiary/tokens/MPMM/Star%20Spawn%20Grue.webp"
+			},
+			"damageTags": [
+				"P",
+				"S",
+				"Y"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			]
+		}
+	],
+	"spell": [
+		{
+			"name": "Curse Unbound",
+			"source": "OWWTCH",
+			"level": 5,
+			"school": "E",
+			"time": [
+				{
+					"number": 0,
+					"unit": "special"
+				}
+			],
+			"range": {
+				"type": "special"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "day",
+						"amount": 1000,
+						"upTo": true
+					}
+				}
+			],
+			"entries": [
+				"Eight rays of light flash from you in a 60-foot Cone. Each creature in the Cone makes a Dexterity saving throw. For each target, roll {@dice 1d100} to determine which curse affects it, consulting the table.",
+				{
+					"type": "table",
+					"caption": "Prismatic Rays",
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"colLabels": [
+						"{@dice 1d8}",
+						"Ray"
+					],
+					"rows": [
+						[
+							"1",
+							"The character cannot turn right until the curse is lifted."
+						],
+						[
+							"2",
+							"Characters feet always sink at least 1 inch into any surface they walk on."
+						],
+						[
+							"3",
+							"All food becomes tasteless."
+						],
+						[
+							"4",
+							"When the character fires a ranged weapon, the ammunition always breaks on impact (this has no effect on damage)."
+						],
+						[
+							"5",
+							"Until the curse is lifted, when the character falls to 0 {@variantrule Hit Points|XPHB}, roll a {@dice 1d100}. If you roll equal to or below the CR of the creature that cursed you, you instantly die."
+						],
+						[
+							"6",
+							"A player must close every door they walk through, even if there are people behind them."
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"8",
+							"A player's weapons become twice as heavy, requiring two actions to strike once, until the curse is lifted."
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						],
+						[
+							"7",
+							"A player's weapon becomes lodged inside the body of their enemy after any stab attack, a strength check (DC 15) is needed to free the weapon. "
+						]
+					]
+				}
+			],
+			"damageInflict": [
+				"acid",
+				"cold",
+				"fire",
+				"lightning",
+				"poison"
+			],
+			"savingThrow": [
+				"dexterity",
+				"constitution",
+				"wisdom"
+			],
+			"miscTags": [
+				"PRM"
+			],
+			"areaTags": [
+				"N"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Bard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "XPHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "XPHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "XPHB"
+					}
+				]
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "gemstones worth 100+ GP, which the spell consumes",
+					"consume": true,
+					"cost": 10000
+				}
+			}
+		}
+	]
+}
